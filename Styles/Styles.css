@@ -78,9 +78,16 @@ body {
   transition: 1s linear;
 }
 .fadeInArea .chevron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 10%;
   opacity: 0%;
+}
+.fadeInArea .chevron img {
+  height: 50%;
 }
 .fadeInArea .active {
   opacity: 100%;
