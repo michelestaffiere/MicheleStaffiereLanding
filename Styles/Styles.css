@@ -136,7 +136,7 @@ nav .menuUl hr {
   width: 100%;
   color: green;
   border-color: green;
-  height: 2px;
+  height: 1px;
   transition: all 1s linear;
 }
 nav .contactMe {
@@ -211,7 +211,7 @@ nav button:active {
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 10rem;
 }
 .showCase h2 {
   font-size: 3rem;
@@ -219,6 +219,8 @@ nav button:active {
 .showCase .container {
   display: flex;
   gap: 3.5rem;
+  width: 100%;
+  justify-content: space-around;
 }
 .showCase .container div {
   display: flex;
@@ -227,28 +229,71 @@ nav button:active {
   padding: 1rem;
   gap: 1rem;
 }
-.showCase .container div .stackUsed {
+.showCase .container div .previewImg {
+  position: relative;
+  height: 30rem;
+  width: 30rem;
+  background-image: url(../Assets/JobBoard.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+}
+.showCase .container div .projectInfo {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 128, 0, 0.225);
+  border-radius: 8px;
+  position: absolute;
+  height: 30rem;
+  width: 30rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.showCase .container div .projectInfo ul {
+  display: flex;
+  gap: 2rem;
+}
+.showCase .container div .projectInfo .stackUsed {
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
 }
-.showCase .container div .stackUsed img {
-  max-height: 2.5rem;
+.showCase .container div .projectInfo .stackUsed img {
+  max-height: 3.5rem;
+  filter: drop-shadow(0 0 10px black);
 }
-.showCase .container div li {
+.showCase .container div .projectInfo .stackUsed li {
+  padding: 1%;
+  border-radius: 5px;
+  background-color: black;
+  color: green;
+}
+.showCase .container div .projectInfo li {
   margin-top: 1rem;
 }
-.showCase .container div a {
-  color: black;
+.showCase .container div .projectInfo a {
+  color: red;
+  padding: 1%;
   text-decoration: none;
-  background-color: antiquewhite;
+  background-color: black;
   border-radius: 3px;
   margin-top: 3rem;
   padding: 0 2px;
 }
-.showCase .container div p {
+.showCase .container div .projectInfo p {
+  color: green;
+  padding: 1%;
+  background-color: black;
+  border-radius: 8px;
   line-height: 1.5;
 }
-.showCase .container div h3 {
+.showCase .container div .projectInfo h3 {
   font-size: 1.25rem;
+  color: green;
+  background-color: black;
+  display: inline-block;
+}
+.showCase .container div .projectInfo:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }/*# sourceMappingURL=Styles.css.map */

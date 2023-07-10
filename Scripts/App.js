@@ -7,7 +7,7 @@ const chevron = document.querySelector('.chevron');
 
 
 
-//  glitch animation, we can use this anywhere.
+// Hackermans glitch animation, we can use this anywhere,,, we are so in.
 const GlitchAnimation = (target, completedCallback) => {
     const characters = "12345ABCDEFGHIJKLMNOP$%#@!~.[]";
     
