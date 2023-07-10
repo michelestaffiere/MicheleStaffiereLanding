@@ -205,12 +205,16 @@ nav button:active {
   }
 }
 .showCase {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   height: 100vh;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+}
+.showCase h2 {
+  font-size: 3rem;
 }
 .showCase .container {
   display: flex;
@@ -241,4 +245,10 @@ nav button:active {
   border-radius: 3px;
   margin-top: 3rem;
   padding: 0 2px;
+}
+.showCase .container div p {
+  line-height: 1.5;
+}
+.showCase .container div h3 {
+  font-size: 1.25rem;
 }/*# sourceMappingURL=Styles.css.map */
