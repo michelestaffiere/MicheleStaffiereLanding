@@ -229,14 +229,22 @@ nav button:active {
   padding: 1rem;
   gap: 1rem;
 }
-.showCase .container div .previewImg {
+.showCase .container div .previewImg1, .showCase .container div .previewImg2, .showCase .container div .previewImg3 {
   position: relative;
   height: 30rem;
   width: 30rem;
-  background-image: url(../Assets/JobBoard.png);
   background-position: center;
   background-size: cover;
   background-repeat: none;
+}
+.showCase .container div .previewImg1 {
+  background-image: url(../Assets/JobBoard.png);
+}
+.showCase .container div .previewImg2 {
+  background-image: url(../Assets/clipboard.png);
+}
+.showCase .container div .previewImg3 {
+  background-image: url(../Assets/oreg.png);
 }
 .showCase .container div .projectInfo {
   display: flex;

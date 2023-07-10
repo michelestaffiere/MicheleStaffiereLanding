@@ -24,16 +24,23 @@
         padding: 1rem;
         gap: 1rem;
   
-        .previewImg {
+        .previewImg1, .previewImg2, .previewImg3  {
            position: relative;
            height: 30rem;
            width: 30rem;
-           background-image: url(../Assets/JobBoard.png);
            background-position: center;
            background-size: cover;
            background-repeat: none;
+        }
+        .previewImg1{
+          background-image: url(../Assets/JobBoard.png);
+        }
+        .previewImg2{
+          background-image: url(../Assets/clipboard.png);
         }   
-  
+        .previewImg3{
+          background-image: url(../Assets/oreg.png);
+        }
         .projectInfo {
           display: flex;
           justify-content: center;  
