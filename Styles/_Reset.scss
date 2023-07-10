@@ -13,6 +13,9 @@
     -webkit-font-smoothing: antialiased;
     text-size-adjust: none;
   }
+  html{
+    scroll-behavior: smooth;
+  }
   
   footer, header, nav, section, main{
     display: block;

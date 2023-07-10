@@ -64,3 +64,6 @@ const firstLoadGlitchAnimation = () =>{
 };
 
 firstLoadGlitchAnimation();
+
+// todo 
+// copy and tweak the glitch animation to create one thats constantly glitches, do this later for flavour.

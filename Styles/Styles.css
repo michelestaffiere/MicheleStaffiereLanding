@@ -14,6 +14,10 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-size-adjust: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 footer, header, nav, section, main {
   display: block;
 }
@@ -53,6 +57,8 @@ input {
 body {
   background-color: black;
   height: 100%;
+  color: antiquewhite;
+  font-family: "Space Mono", monospace;
 }
 
 .fadeInArea {
@@ -61,8 +67,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: "Space Mono", monospace;
-  color: antiquewhite;
 }
 .fadeInArea .name {
   opacity: 0%;
@@ -71,7 +75,6 @@ body {
   transition: 1s linear;
 }
 .fadeInArea .subHeading {
-  font-family: "Space Mono", monospace;
   font-size: 4rem;
   color: inherit;
   opacity: 0;
@@ -101,13 +104,15 @@ body {
 
 nav {
   position: fixed;
-  margin-top: 1rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-around;
   width: 100%;
   transition: 1s linear;
   align-items: end;
   opacity: 0;
+  background-color: black;
+  z-index: 2;
 }
 nav .menuUl {
   display: grid;
@@ -121,7 +126,6 @@ nav .menuUl li {
 nav .menuUl li a {
   color: antiquewhite;
   text-decoration: none;
-  font-family: "Space Mono", monospace;
   font-size: 1.25rem;
 }
 nav .menuUl li:hover ~ hr {
@@ -131,6 +135,7 @@ nav .menuUl li:hover ~ hr {
 nav .menuUl hr {
   width: 100%;
   color: green;
+  border-color: green;
   height: 2px;
   transition: all 1s linear;
 }
@@ -198,4 +203,42 @@ nav button:active {
   100% {
     opacity: 0%;
   }
+}
+.showCase {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.showCase .container {
+  display: flex;
+  gap: 3.5rem;
+}
+.showCase .container div {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 1rem;
+  gap: 1rem;
+}
+.showCase .container div .stackUsed {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.showCase .container div .stackUsed img {
+  max-height: 2.5rem;
+}
+.showCase .container div li {
+  margin-top: 1rem;
+}
+.showCase .container div a {
+  color: black;
+  text-decoration: none;
+  background-color: antiquewhite;
+  border-radius: 3px;
+  margin-top: 3rem;
+  padding: 0 2px;
 }/*# sourceMappingURL=Styles.css.map */
