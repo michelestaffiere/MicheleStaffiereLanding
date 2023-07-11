@@ -1,11 +1,11 @@
 .showCase {
-    margin-top: 2rem;
+    margin: 2rem 0;
     display: flex;
     justify-content: center;
     height: 100vh;
     flex-direction: column;
     align-items: center;
-    gap: 10rem;
+ 
   
     h2 {
       font-size: 3rem;
@@ -17,43 +17,36 @@
       width: 100%;
       justify-content: space-around;
   
-      & div {
+      & .project1, .project2, .project3 {
         display: flex;
         flex-direction: column;
-        width: 20rem;
-        padding: 1rem;
+        height: fit-content;
+        width: 25rem;
+        padding:0;
         gap: 1rem;
   
         .previewImg1, .previewImg2, .previewImg3  {
-           position: relative;
-           height: 30rem;
-           width: 30rem;
-           background-position: center;
-           background-size: cover;
-           background-repeat: none;
+          display: flex;
+          justify-content: center; 
+          height: inherit;
+           width: inherit;
         }
-        .previewImg1{
-          background-image: url(../Assets/JobBoard.png);
+        .previewImg1 img, .previewImg2 img, .previewImg3 img{
+          width: inherit;
         }
-        .previewImg2{
-          background-image: url(../Assets/clipboard.png);
-        }   
-        .previewImg3{
-          background-image: url(../Assets/oreg.png);
-        }
+      
         .projectInfo {
           display: flex;
-          justify-content: center;  
+          flex-direction: column;
+          justify-content: center;
+          gap: 1rem;  
           background:rgba(0, 128, 0, 0.225);
           border-radius: 8px;
-          position: absolute;
-          height: 30rem;
-          width: 30rem;
-          opacity: 0;
+          height: inherit;
+          width: inherit;
+          padding: 10px;
           transition: opacity .5s ease-in-out;
           & 
-          
-          
           ul{
             display: flex;
             gap: 2rem;
@@ -102,12 +95,7 @@
             background-color: black;
             display: inline-block;
           }
-          &:hover{
-            opacity: 1;
-            transition: opacity .5s ease-in-out;
-          }
         }
-
       }
     }
   }

@@ -11,7 +11,9 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
 }
 
 html {
@@ -205,13 +207,12 @@ nav button:active {
   }
 }
 .showCase {
-  margin-top: 2rem;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  gap: 10rem;
 }
 .showCase h2 {
   font-size: 3rem;
@@ -222,64 +223,59 @@ nav button:active {
   width: 100%;
   justify-content: space-around;
 }
-.showCase .container div {
+.showCase .container .project1, .showCase .container .project2, .showCase .container .project3 {
   display: flex;
   flex-direction: column;
-  width: 20rem;
-  padding: 1rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 25rem;
+  padding: 0;
   gap: 1rem;
 }
-.showCase .container div .previewImg1, .showCase .container div .previewImg2, .showCase .container div .previewImg3 {
-  position: relative;
-  height: 30rem;
-  width: 30rem;
-  background-position: center;
-  background-size: cover;
-  background-repeat: none;
-}
-.showCase .container div .previewImg1 {
-  background-image: url(../Assets/JobBoard.png);
-}
-.showCase .container div .previewImg2 {
-  background-image: url(../Assets/clipboard.png);
-}
-.showCase .container div .previewImg3 {
-  background-image: url(../Assets/oreg.png);
-}
-.showCase .container div .projectInfo {
+.showCase .container .project1 .previewImg1, .showCase .container .project1 .previewImg2, .showCase .container .project1 .previewImg3, .showCase .container .project2 .previewImg1, .showCase .container .project2 .previewImg2, .showCase .container .project2 .previewImg3, .showCase .container .project3 .previewImg1, .showCase .container .project3 .previewImg2, .showCase .container .project3 .previewImg3 {
   display: flex;
   justify-content: center;
+  height: inherit;
+  width: inherit;
+}
+.showCase .container .project1 .previewImg1 img, .showCase .container .project1 .previewImg2 img, .showCase .container .project1 .previewImg3 img, .showCase .container .project2 .previewImg1 img, .showCase .container .project2 .previewImg2 img, .showCase .container .project2 .previewImg3 img, .showCase .container .project3 .previewImg1 img, .showCase .container .project3 .previewImg2 img, .showCase .container .project3 .previewImg3 img {
+  width: inherit;
+}
+.showCase .container .project1 .projectInfo, .showCase .container .project2 .projectInfo, .showCase .container .project3 .projectInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
   background: rgba(0, 128, 0, 0.225);
   border-radius: 8px;
-  position: absolute;
-  height: 30rem;
-  width: 30rem;
-  opacity: 0;
+  height: inherit;
+  width: inherit;
+  padding: 10px;
   transition: opacity 0.5s ease-in-out;
 }
-.showCase .container div .projectInfo ul {
+.showCase .container .project1 .projectInfo ul, .showCase .container .project2 .projectInfo ul, .showCase .container .project3 .projectInfo ul {
   display: flex;
   gap: 2rem;
 }
-.showCase .container div .projectInfo .stackUsed {
+.showCase .container .project1 .projectInfo .stackUsed, .showCase .container .project2 .projectInfo .stackUsed, .showCase .container .project3 .projectInfo .stackUsed {
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
 }
-.showCase .container div .projectInfo .stackUsed img {
+.showCase .container .project1 .projectInfo .stackUsed img, .showCase .container .project2 .projectInfo .stackUsed img, .showCase .container .project3 .projectInfo .stackUsed img {
   max-height: 3.5rem;
   filter: drop-shadow(0 0 10px black);
 }
-.showCase .container div .projectInfo .stackUsed li {
+.showCase .container .project1 .projectInfo .stackUsed li, .showCase .container .project2 .projectInfo .stackUsed li, .showCase .container .project3 .projectInfo .stackUsed li {
   padding: 1%;
   border-radius: 5px;
   background-color: black;
   color: green;
 }
-.showCase .container div .projectInfo li {
+.showCase .container .project1 .projectInfo li, .showCase .container .project2 .projectInfo li, .showCase .container .project3 .projectInfo li {
   margin-top: 1rem;
 }
-.showCase .container div .projectInfo a {
+.showCase .container .project1 .projectInfo a, .showCase .container .project2 .projectInfo a, .showCase .container .project3 .projectInfo a {
   color: red;
   padding: 1%;
   text-decoration: none;
@@ -288,20 +284,16 @@ nav button:active {
   margin-top: 3rem;
   padding: 0 2px;
 }
-.showCase .container div .projectInfo p {
+.showCase .container .project1 .projectInfo p, .showCase .container .project2 .projectInfo p, .showCase .container .project3 .projectInfo p {
   color: green;
   padding: 1%;
   background-color: black;
   border-radius: 8px;
   line-height: 1.5;
 }
-.showCase .container div .projectInfo h3 {
+.showCase .container .project1 .projectInfo h3, .showCase .container .project2 .projectInfo h3, .showCase .container .project3 .projectInfo h3 {
   font-size: 1.25rem;
   color: green;
   background-color: black;
   display: inline-block;
-}
-.showCase .container div .projectInfo:hover {
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
 }/*# sourceMappingURL=Styles.css.map */
