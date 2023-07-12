@@ -63,32 +63,32 @@ const firstLoadGlitchAnimation = () =>{
     })
 };
 
+const projectAnimationHandling = () =>{
+    const project1Observer = new IntersectionObserver(entries => {
+        entries.forEach(entry =>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('animate__animated', 'animate__fadeInLeft');
+            }
+        });
+    });
+    const project2Observer = new IntersectionObserver(entries => {
+        entries.forEach(entry =>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('animate__animated','animate__fadeIn');
+            }
+        });
+    });
+    const project3Observer = new IntersectionObserver(entries => {
+        entries.forEach(entry =>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('animate__animated', 'animate__fadeInRight')
+            }
+        });
+    });
+    project1Observer.observe(document.querySelector('.project1'));
+    project2Observer.observe(document.querySelector('.project2'));
+    project3Observer.observe(document.querySelector('.project3'));
+}
+
+projectAnimationHandling();
 firstLoadGlitchAnimation();
-
-// todo 
-// copy and tweak the glitch animation to create one thats constantly glitches, do this later for flavour.
-
-const project1Observer = new IntersectionObserver(entries => {
-    entries.forEach(entry =>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('animate__animated', 'animate__fadeInLeft');
-        }
-    });
-});
-const project2Observer = new IntersectionObserver(entries => {
-    entries.forEach(entry =>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('animate__animated','animate__fadeIn');
-        }
-    });
-});
-const project3Observer = new IntersectionObserver(entries => {
-    entries.forEach(entry =>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('animate__animated', 'animate__fadeInRight')
-        }
-    });
-});
-project1Observer.observe(document.querySelector('.project1'));
-project2Observer.observe(document.querySelector('.project2'));
-project3Observer.observe(document.querySelector('.project3'));
