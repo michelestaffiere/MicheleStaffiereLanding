@@ -59,7 +59,7 @@ nav{
     &  .menuUl{
             display: grid;
             grid-template-columns:  repeat(2,1fr);
-            gap: 1rem;
+            gap: 2rem;
             & li{
                 list-style: none;
                 text-align: center;
@@ -71,7 +71,7 @@ nav{
                 &:hover{
                     & ~ hr{
                         animation:  borderBreath 2s infinite;
-                        transition: all 1s linear;
+                        transition: all .25s linear;
                     }
                 }
             }
@@ -80,7 +80,8 @@ nav{
                 color: green;
                 border-color: green; // chrome and IE colour fix.
                 height: 1px;
-                transition: all 1s linear;
+                transition: all .25s linear;
+                margin: 0;
             }
         }
         .contactMe{
@@ -104,7 +105,7 @@ nav{
 
 // Menu HR movement
 .menu2:hover ~ hr{
-    margin-left: 120%;
+    margin-left: 130%;
 }
 
 .active{

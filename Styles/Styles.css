@@ -11,13 +11,15 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-     -moz-text-size-adjust: none;
-          text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+p {
+  font-size: 1.15rem;
 }
 
 footer, header, nav, section, main {
@@ -119,7 +121,7 @@ nav {
 nav .menuUl {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
 nav .menuUl li {
   list-style: none;
@@ -132,14 +134,15 @@ nav .menuUl li a {
 }
 nav .menuUl li:hover ~ hr {
   animation: borderBreath 2s infinite;
-  transition: all 1s linear;
+  transition: all 0.25s linear;
 }
 nav .menuUl hr {
   width: 100%;
   color: green;
   border-color: green;
   height: 1px;
-  transition: all 1s linear;
+  transition: all 0.25s linear;
+  margin: 0;
 }
 nav .contactMe {
   background-color: black;
@@ -158,7 +161,7 @@ nav button:active {
 }
 
 .menu2:hover ~ hr {
-  margin-left: 120%;
+  margin-left: 130%;
 }
 
 .active {
@@ -207,7 +210,7 @@ nav button:active {
   }
 }
 .showCase {
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -217,31 +220,30 @@ nav button:active {
 .showCase h2 {
   font-size: 3rem;
 }
-.showCase .container {
+.showCase .showCaseContainer {
   display: flex;
   gap: 3.5rem;
   width: 100%;
   justify-content: space-around;
 }
-.showCase .container .project1, .showCase .container .project2, .showCase .container .project3 {
+.showCase .showCaseContainer .project1, .showCase .showCaseContainer .project2, .showCase .showCaseContainer .project3 {
   display: flex;
   flex-direction: column;
-  height: -moz-fit-content;
   height: fit-content;
   width: 25rem;
   padding: 0;
   gap: 1rem;
 }
-.showCase .container .project1 .previewImg1, .showCase .container .project1 .previewImg2, .showCase .container .project1 .previewImg3, .showCase .container .project2 .previewImg1, .showCase .container .project2 .previewImg2, .showCase .container .project2 .previewImg3, .showCase .container .project3 .previewImg1, .showCase .container .project3 .previewImg2, .showCase .container .project3 .previewImg3 {
+.showCase .showCaseContainer .project1 .previewImg1, .showCase .showCaseContainer .project1 .previewImg2, .showCase .showCaseContainer .project1 .previewImg3, .showCase .showCaseContainer .project2 .previewImg1, .showCase .showCaseContainer .project2 .previewImg2, .showCase .showCaseContainer .project2 .previewImg3, .showCase .showCaseContainer .project3 .previewImg1, .showCase .showCaseContainer .project3 .previewImg2, .showCase .showCaseContainer .project3 .previewImg3 {
   display: flex;
   justify-content: center;
   height: inherit;
   width: inherit;
 }
-.showCase .container .project1 .previewImg1 img, .showCase .container .project1 .previewImg2 img, .showCase .container .project1 .previewImg3 img, .showCase .container .project2 .previewImg1 img, .showCase .container .project2 .previewImg2 img, .showCase .container .project2 .previewImg3 img, .showCase .container .project3 .previewImg1 img, .showCase .container .project3 .previewImg2 img, .showCase .container .project3 .previewImg3 img {
+.showCase .showCaseContainer .project1 .previewImg1 img, .showCase .showCaseContainer .project1 .previewImg2 img, .showCase .showCaseContainer .project1 .previewImg3 img, .showCase .showCaseContainer .project2 .previewImg1 img, .showCase .showCaseContainer .project2 .previewImg2 img, .showCase .showCaseContainer .project2 .previewImg3 img, .showCase .showCaseContainer .project3 .previewImg1 img, .showCase .showCaseContainer .project3 .previewImg2 img, .showCase .showCaseContainer .project3 .previewImg3 img {
   width: inherit;
 }
-.showCase .container .project1 .projectInfo, .showCase .container .project2 .projectInfo, .showCase .container .project3 .projectInfo {
+.showCase .showCaseContainer .project1 .projectInfo, .showCase .showCaseContainer .project2 .projectInfo, .showCase .showCaseContainer .project3 .projectInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -253,29 +255,29 @@ nav button:active {
   padding: 10px;
   transition: opacity 0.5s ease-in-out;
 }
-.showCase .container .project1 .projectInfo ul, .showCase .container .project2 .projectInfo ul, .showCase .container .project3 .projectInfo ul {
+.showCase .showCaseContainer .project1 .projectInfo ul, .showCase .showCaseContainer .project2 .projectInfo ul, .showCase .showCaseContainer .project3 .projectInfo ul {
   display: flex;
   gap: 2rem;
 }
-.showCase .container .project1 .projectInfo .stackUsed, .showCase .container .project2 .projectInfo .stackUsed, .showCase .container .project3 .projectInfo .stackUsed {
+.showCase .showCaseContainer .project1 .projectInfo .stackUsed, .showCase .showCaseContainer .project2 .projectInfo .stackUsed, .showCase .showCaseContainer .project3 .projectInfo .stackUsed {
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
 }
-.showCase .container .project1 .projectInfo .stackUsed img, .showCase .container .project2 .projectInfo .stackUsed img, .showCase .container .project3 .projectInfo .stackUsed img {
+.showCase .showCaseContainer .project1 .projectInfo .stackUsed img, .showCase .showCaseContainer .project2 .projectInfo .stackUsed img, .showCase .showCaseContainer .project3 .projectInfo .stackUsed img {
   max-height: 3.5rem;
   filter: drop-shadow(0 0 10px black);
 }
-.showCase .container .project1 .projectInfo .stackUsed li, .showCase .container .project2 .projectInfo .stackUsed li, .showCase .container .project3 .projectInfo .stackUsed li {
+.showCase .showCaseContainer .project1 .projectInfo .stackUsed li, .showCase .showCaseContainer .project2 .projectInfo .stackUsed li, .showCase .showCaseContainer .project3 .projectInfo .stackUsed li {
   padding: 1%;
   border-radius: 5px;
   background-color: black;
   color: green;
 }
-.showCase .container .project1 .projectInfo li, .showCase .container .project2 .projectInfo li, .showCase .container .project3 .projectInfo li {
+.showCase .showCaseContainer .project1 .projectInfo li, .showCase .showCaseContainer .project2 .projectInfo li, .showCase .showCaseContainer .project3 .projectInfo li {
   margin-top: 1rem;
 }
-.showCase .container .project1 .projectInfo a, .showCase .container .project2 .projectInfo a, .showCase .container .project3 .projectInfo a {
+.showCase .showCaseContainer .project1 .projectInfo a, .showCase .showCaseContainer .project2 .projectInfo a, .showCase .showCaseContainer .project3 .projectInfo a {
   color: red;
   padding: 1%;
   text-decoration: none;
@@ -284,16 +286,86 @@ nav button:active {
   margin-top: 3rem;
   padding: 0 2px;
 }
-.showCase .container .project1 .projectInfo p, .showCase .container .project2 .projectInfo p, .showCase .container .project3 .projectInfo p {
+.showCase .showCaseContainer .project1 .projectInfo p, .showCase .showCaseContainer .project2 .projectInfo p, .showCase .showCaseContainer .project3 .projectInfo p {
   color: green;
   padding: 1%;
   background-color: black;
   border-radius: 8px;
   line-height: 1.5;
 }
-.showCase .container .project1 .projectInfo h3, .showCase .container .project2 .projectInfo h3, .showCase .container .project3 .projectInfo h3 {
+.showCase .showCaseContainer .project1 .projectInfo h3, .showCase .showCaseContainer .project2 .projectInfo h3, .showCase .showCaseContainer .project3 .projectInfo h3 {
   font-size: 1.25rem;
   color: green;
   background-color: black;
   display: inline-block;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 3rem;
+}
+.about h2 {
+  font-size: 3rem;
+}
+.about .aboutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+}
+.about .aboutContainer .headshot {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  max-width: 20rem;
+}
+.about .aboutContainer .headshot img {
+  max-width: inherit;
+  border-radius: 10px;
+  filter: grayscale(20%) drop-shadow(0px 0px 10px green);
+}
+.about .aboutContainer .myStoryText {
+  display: flex;
+  width: 40%;
+  padding: 0;
+  gap: 0.25rem;
+}
+.about .aboutContainer .myStoryText .socials ul {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.about .aboutContainer .myStoryText .socials ul li img {
+  height: auto;
+  width: 75px;
+}
+.about .aboutContainer .myStoryText p {
+  line-height: 1.25;
+}
+.about .techStack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.about .techStack ul {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+.about .techStack ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about .techStack ul li img {
+  height: auto;
+  width: 50px;
+  margin: 0 0 1rem 0;
 }/*# sourceMappingURL=Styles.css.map */

@@ -1,5 +1,5 @@
 .showCase {
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -11,7 +11,7 @@
       font-size: 3rem;
     }
   
-    & .container {
+    & .showCaseContainer {
       display: flex;
       gap: 3.5rem;
       width: 100%;
