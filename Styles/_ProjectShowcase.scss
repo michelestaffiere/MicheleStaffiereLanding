@@ -5,47 +5,57 @@
     height: 100vh;
     flex-direction: column;
     align-items: center;
+    
  
   
     h2 {
       font-size: 3rem;
+      margin-bottom: 1rem;
     }
   
     & .showCaseContainer {
       display: flex;
-      gap: 3.5rem;
+      flex-direction: column;
       width: 100%;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
+      // gap: 1.5rem;
   
       & .project1, .project2, .project3 {
         display: flex;
-        flex-direction: column;
         height: fit-content;
-        width: 25rem;
-        padding:0;
-        gap: 1rem;
-  
+        width: 75%;
+        padding: 0;
+        // gap: 1rem;
+        
         .previewImg1, .previewImg2, .previewImg3  {
           display: flex;
-          justify-content: center; 
+          justify-content: center;
           height: inherit;
-           width: inherit;
+          flex-basis: 50%;
+          //border-bottom: 5px dashed rgba(0, 128, 0, 0.451); 
+         
+          
         }
         .previewImg1 img, .previewImg2 img, .previewImg3 img{
-          width: inherit;
+          width: 50%;
         }
-      
+        .previewImg2{
+          order: 2;
+          border-right: none;
+        }
+        
         .projectInfo {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          gap: 1rem;  
-          background:rgba(0, 128, 0, 0.225);
-          border-radius: 8px;
-          height: inherit;
-          width: inherit;
+          gap: 1rem;
           padding: 10px;
-          transition: opacity .5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+          flex-basis: 50%;
+          text-align: left;
+          //border-right: 5px dashed rgba(0, 128, 0, 0.451);
+          //border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
           & 
           ul{
             display: flex;
@@ -60,35 +70,34 @@
               filter: drop-shadow(0 0 10px black);
             }
             li{
-              padding: 1%;
               border-radius: 5px;
               background-color: black;
               color: green;
+              font-style: italic;
             }
           }
-  
+          
           li {
             margin-top: 1rem;
           }
-  
+          
           a {
-            color:red;
-            padding: 1%;
+            color:black;
             text-decoration: none;
-            background-color: black;
-            border-radius: 3px;
+            background-color: red;
+            border-radius: 10px;
             margin-top: 3rem;
-            padding: 0 2px;
+            padding: 1px 2px;
+           
           }
-  
+          
           p {
             color: green;
-            padding: 1%;
             background-color: black;
             border-radius: 8px;
             line-height: 1.5;
           }
-  
+          
           h3 {
             font-size: 1.25rem;
             color: green;
@@ -96,7 +105,24 @@
             display: inline-block;
           }
         }
+        .second{
+          border-right:none;
+          //border-left: 5px dashed rgba(0, 128, 0, 0.451);
+          text-align: right;
+        }
       }
     }
   }
-  
+
+  .project1{
+    border-left:5px dashed rgba(0, 128, 0, 0.451);
+    border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
+  }
+  .project2{
+    border-right:5px dashed rgba(0, 128, 0, 0.451);
+    border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
+  }
+  .project3{
+    border-left:5px dashed rgba(0, 128, 0, 0.451);
+    border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
+  }

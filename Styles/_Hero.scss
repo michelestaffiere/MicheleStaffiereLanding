@@ -45,7 +45,7 @@
 // Navigation STARTS
 
 nav{
-    position: fixed;
+    //position: fixed;
     padding: 1rem;
     display: flex;
     justify-content: space-around;
@@ -94,6 +94,7 @@ nav{
         }
         button:hover,button:focus{
             animation:  borderBreath 2s infinite;
+            background-color: darkgreen;
             cursor: pointer;
         }
         button:active{
@@ -109,7 +110,7 @@ nav{
 }
 
 .active{
-    opacity: 100%;
+    opacity: 1;
     transition: opacity 1 linear ;
 }
 

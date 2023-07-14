@@ -11,10 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body >
+    <dialog class="modal" id="modal">
+        <div>
+            <h2>//Connection : SECURE</h2>
+            <h3>//Let's Talk!</h3>
+        </div>
+        <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xvojpvqk" method="post">
+            <fieldset id="fs-frm-inputs">
+              <label for="full-name">//Full Name:</label>
+              <input type="text" name="name" id="full-name" placeholder="//Name..." required class="nameInput">
+              <label for="email-address">//Email Address:</label>
+              <input type="email" name="_replyto" id="email-address" placeholder="//Email..." required>
+              <label for="message">//Message:</label>
+              <textarea rows="5" name="message" id="message" placeholder="//What do you have to say..." 	required="Message..."></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            </fieldset>
+            <input type="submit" value="//Submit" class="submit">
+          </form>
+        <button class="closeModal" id="closeModal">//Terminate</button>
+    </dialog>
     <nav>
-        <button class="contactMe">Let's Talk</button>
-        <dialog class="contactModal">
-        </dialog>
+        <button class="contactMe" id="contactMeBtn">Let's Talk</button>
         <ul class="menuUl">
             <li ><a href="#showCase">Projects</a></li>
             <li class="menu2"><a href="#about">About Me</a></li>
@@ -61,7 +78,7 @@
                     <div class="previewImg2">
                         <img src="./Assets/clipboard.png" alt="Clipbaord Landing Page project preview">
                     </div>
-                    <div class="projectInfo">
+                    <div class="projectInfo second">
                          <h3>// Clipboard</h3>
                         <p>Converted from PSD. A mock up landing page for a company and it's product.Built to be fully accesible and viewables on all screen sizes. </p>
                         <ul>
@@ -103,6 +120,20 @@
                 <div class="headshot">
                     <img src="./Assets/myFace.PNG" alt="a picture of me just for you!">
                     <p>//Me-Kayle-Lay</p>
+                    <ul class="socials">
+                        <li>
+                            <a href="https://github.com/michelestaffiere" target="_blank">
+                                <img src="./Assets/social_Github.svg" alt="External link leading to my Github">
+                            </a>
+                            GitHub
+                        </li>
+                        <li>
+                            <a href="https://ca.linkedin.com/in/michelestaffiere" target="_blank">
+                                <img src="./Assets/social_LinkedIn.svg" alt="External link leading to my LinkedIn">
+                            </a>
+                            LinkedIn
+                        </li>
+                    </ul>
                     <div class="stack">
                         <!-- carosel of icons -->
                     </div>
@@ -114,30 +145,14 @@
                         </p>
                         <br>
                         <p>
-                            I love creating clean and simplistic sites that pop. I decided to theme my site after our good friend the <span>[terminal]</span> - The idea came to me when i was getting DOSbox ready and playing around in the terminal. Of course so I could play some old school point and click adventure games<span>[Maniac Mansion]</span> to be exact.
+                            I love creating clean and simplistic sites that pop. I decided to theme my site after our good friend the <span>[terminal]</span> - The idea came to me when i was getting DOSbox ready and playing around in the terminal. Of course so I could play some old school point and click adventure games <span>[Maniac Mansion]</span> to be exact.
                         </p>
                         <br>
                         <p>
-                            If my page resonates with you and you want to work together or just want to talk, feel free to reach out to me on LinkedIn or shoot me and email using the <span>[Let's Talk]</span> button!
+                            If my page resonates with you and you want to work together or just want to talk, feel free to reach out to me on LinkedIn or shoot me and email using the <span><a href="#contactMeBtn">[Let's Talk]</a></span> button!
                         </p>
                         <br>
                         <p>Cheers!</p>
-                    </div>
-                    <div class="socials">
-                        <ul>
-                            <li>
-                                <a href="https://github.com/michelestaffiere" target="_blank">
-                                    <img src="./Assets/social_Github.svg" alt="External link leading to my Github">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://ca.linkedin.com/in/michelestaffiere" target="_blank">
-                                    <img src="./Assets/social_LinkedIn.svg" alt="External link leading to my LinkedIn">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
                     </div>
                 </div>
             </div>
@@ -175,10 +190,6 @@
                  <li>
                     <img src="./Assets/stack_Github.svg" alt="Version Control Icon">
                     <p>Git</p>
-                 </li>
-                 <li>
-                    <img src="./Assets/stack_Npm.svg" alt="Npm Icon">
-                    <p>NPM</p>
                  </li>
                 </ul>
             </div>

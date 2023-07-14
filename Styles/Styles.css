@@ -107,7 +107,6 @@ body {
 }
 
 nav {
-  position: fixed;
   padding: 1rem;
   display: flex;
   justify-content: space-around;
@@ -154,6 +153,7 @@ nav .contactMe {
 }
 nav button:hover, nav button:focus {
   animation: borderBreath 2s infinite;
+  background-color: darkgreen;
   cursor: pointer;
 }
 nav button:active {
@@ -165,7 +165,7 @@ nav button:active {
 }
 
 .active {
-  opacity: 100%;
+  opacity: 1;
   transition: opacity 1 linear;
 }
 
@@ -209,6 +209,58 @@ nav button:active {
     opacity: 0%;
   }
 }
+.modal[open] {
+  background-color: blue;
+  border: 2px white outset;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+.modal[open] div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.modal[open] form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.modal[open] form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.modal[open] form fieldset input[type=text], .modal[open] form fieldset input[type=email] {
+  font-family: "Space Mono", monospace;
+}
+.modal[open] form fieldset input[type=text]::placeholder, .modal[open] form fieldset input[type=email]::placeholder {
+  font-family: "Space Mono", monospace;
+}
+.modal[open] form fieldset textarea {
+  resize: none;
+  border: 2px outset gray;
+}
+.modal[open] form input[type=submit] {
+  border: 2px outset gray;
+}
+.modal[open] .closeModal {
+  border: 2px outset gray;
+}
+
+.modal[open]::backdrop {
+  background-color: rgba(0, 0, 255, 0.246);
+}
+
+.modal {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .showCase {
   margin: 2rem 0 0 0;
   display: flex;
@@ -219,41 +271,43 @@ nav button:active {
 }
 .showCase h2 {
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 .showCase .showCaseContainer {
   display: flex;
-  gap: 3.5rem;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 .showCase .showCaseContainer .project1, .showCase .showCaseContainer .project2, .showCase .showCaseContainer .project3 {
   display: flex;
-  flex-direction: column;
   height: fit-content;
-  width: 25rem;
+  width: 75%;
   padding: 0;
-  gap: 1rem;
 }
 .showCase .showCaseContainer .project1 .previewImg1, .showCase .showCaseContainer .project1 .previewImg2, .showCase .showCaseContainer .project1 .previewImg3, .showCase .showCaseContainer .project2 .previewImg1, .showCase .showCaseContainer .project2 .previewImg2, .showCase .showCaseContainer .project2 .previewImg3, .showCase .showCaseContainer .project3 .previewImg1, .showCase .showCaseContainer .project3 .previewImg2, .showCase .showCaseContainer .project3 .previewImg3 {
   display: flex;
   justify-content: center;
   height: inherit;
-  width: inherit;
+  flex-basis: 50%;
 }
 .showCase .showCaseContainer .project1 .previewImg1 img, .showCase .showCaseContainer .project1 .previewImg2 img, .showCase .showCaseContainer .project1 .previewImg3 img, .showCase .showCaseContainer .project2 .previewImg1 img, .showCase .showCaseContainer .project2 .previewImg2 img, .showCase .showCaseContainer .project2 .previewImg3 img, .showCase .showCaseContainer .project3 .previewImg1 img, .showCase .showCaseContainer .project3 .previewImg2 img, .showCase .showCaseContainer .project3 .previewImg3 img {
-  width: inherit;
+  width: 50%;
+}
+.showCase .showCaseContainer .project1 .previewImg2, .showCase .showCaseContainer .project2 .previewImg2, .showCase .showCaseContainer .project3 .previewImg2 {
+  order: 2;
+  border-right: none;
 }
 .showCase .showCaseContainer .project1 .projectInfo, .showCase .showCaseContainer .project2 .projectInfo, .showCase .showCaseContainer .project3 .projectInfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  background: rgba(0, 128, 0, 0.225);
-  border-radius: 8px;
-  height: inherit;
-  width: inherit;
   padding: 10px;
   transition: opacity 0.5s ease-in-out;
+  flex-basis: 50%;
+  text-align: left;
 }
 .showCase .showCaseContainer .project1 .projectInfo ul, .showCase .showCaseContainer .project2 .projectInfo ul, .showCase .showCaseContainer .project3 .projectInfo ul {
   display: flex;
@@ -269,26 +323,24 @@ nav button:active {
   filter: drop-shadow(0 0 10px black);
 }
 .showCase .showCaseContainer .project1 .projectInfo .stackUsed li, .showCase .showCaseContainer .project2 .projectInfo .stackUsed li, .showCase .showCaseContainer .project3 .projectInfo .stackUsed li {
-  padding: 1%;
   border-radius: 5px;
   background-color: black;
   color: green;
+  font-style: italic;
 }
 .showCase .showCaseContainer .project1 .projectInfo li, .showCase .showCaseContainer .project2 .projectInfo li, .showCase .showCaseContainer .project3 .projectInfo li {
   margin-top: 1rem;
 }
 .showCase .showCaseContainer .project1 .projectInfo a, .showCase .showCaseContainer .project2 .projectInfo a, .showCase .showCaseContainer .project3 .projectInfo a {
-  color: red;
-  padding: 1%;
+  color: black;
   text-decoration: none;
-  background-color: black;
-  border-radius: 3px;
+  background-color: red;
+  border-radius: 10px;
   margin-top: 3rem;
-  padding: 0 2px;
+  padding: 1px 2px;
 }
 .showCase .showCaseContainer .project1 .projectInfo p, .showCase .showCaseContainer .project2 .projectInfo p, .showCase .showCaseContainer .project3 .projectInfo p {
   color: green;
-  padding: 1%;
   background-color: black;
   border-radius: 8px;
   line-height: 1.5;
@@ -298,6 +350,25 @@ nav button:active {
   color: green;
   background-color: black;
   display: inline-block;
+}
+.showCase .showCaseContainer .project1 .second, .showCase .showCaseContainer .project2 .second, .showCase .showCaseContainer .project3 .second {
+  border-right: none;
+  text-align: right;
+}
+
+.project1 {
+  border-left: 5px dashed rgba(0, 128, 0, 0.451);
+  border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
+}
+
+.project2 {
+  border-right: 5px dashed rgba(0, 128, 0, 0.451);
+  border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
+}
+
+.project3 {
+  border-left: 5px dashed rgba(0, 128, 0, 0.451);
+  border-bottom: 5px dashed rgba(0, 128, 0, 0.451);
 }
 
 .about {
@@ -310,6 +381,20 @@ nav button:active {
 }
 .about h2 {
   font-size: 3rem;
+}
+.about .socials {
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+}
+.about .socials li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about .socials li img {
+  height: auto;
+  width: 50px;
 }
 .about .aboutContainer {
   display: flex;
@@ -334,17 +419,18 @@ nav button:active {
   padding: 0;
   gap: 0.25rem;
 }
-.about .aboutContainer .myStoryText .socials ul {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-.about .aboutContainer .myStoryText .socials ul li img {
-  height: auto;
-  width: 75px;
-}
 .about .aboutContainer .myStoryText p {
-  line-height: 1.25;
+  line-height: 1.45;
+}
+.about .aboutContainer .myStoryText span {
+  color: red;
+  font-weight: 800;
+}
+.about .aboutContainer .myStoryText a {
+  color: green;
+  padding: 0px 2px;
+  border-radius: 10px;
+  font-weight: 800;
 }
 .about .techStack {
   display: flex;

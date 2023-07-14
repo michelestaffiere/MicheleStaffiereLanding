@@ -92,3 +92,35 @@ const projectAnimationHandling = () =>{
 
 projectAnimationHandling();
 firstLoadGlitchAnimation();
+
+
+
+//Modal Scriipts
+const contactButton = document.getElementById("contactMeBtn");
+const closeContactModalButton = document.getElementById("closeModal")
+const modal = document.getElementById("modal");
+const formSubmit = document.querySelector('.submit')
+
+contactButton.addEventListener('click',()=>{
+    modal.showModal();
+});
+
+closeContactModalButton.addEventListener('click',() =>{
+    modal.close();
+});
+
+formSubmit.addEventListener('submit',(e) =>{
+    const nameInput = document.getElementById('full-name');
+    const emailInput = document.getElementById('email-address');
+    const messageInput = document.getElementById('message');
+    e.preventDefault();
+    console.log("clearing inputs")
+
+    nameInput.value="";
+    emailInput.value="";
+    messageInput.value="";
+
+    if(nameInput.value === "" && emailInput.value === ""  && messageInput.value === "" ){
+        console.log('inputs cleared!');
+    }
+});

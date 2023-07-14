@@ -1,0 +1,52 @@
+.modal[open]{
+    background-color: blue;
+    border: 2px white outset;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width:20rem;
+    transition: opacity .3s ease-in-out;
+
+    opacity: 1;
+    & div{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    & form{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        & fieldset{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            
+            input[type="text"], input[type="email"]{
+                font-family: 'Space Mono', monospace;
+            }
+            input[type="text"]::placeholder,input[type="email"]::placeholder{
+                font-family: 'Space Mono', monospace;
+            }
+            textarea{
+                resize: none;
+                border: 2px outset gray;
+            }
+        }
+        & input[type="submit"]{
+            border: 2px outset gray;
+        }
+    }
+    & .closeModal{
+        border: 2px outset gray;
+    }
+}
+
+.modal[open]::backdrop{
+    background-color: rgba(0, 0, 255, 0.246);
+}
+.modal{
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
