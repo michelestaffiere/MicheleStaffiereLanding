@@ -1,4 +1,10 @@
-.wrapper{ width:80%; margin:0 auto;}
+.wrapper{ 
+    width:80%; 
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
 body{
     background-color: black;
     height: 100%;

@@ -1,19 +1,49 @@
-// 1920px laptops @ 125% scaling / older molder HD displays
-@media only screen and (max-width: 1600px) {
 
-}
-// Smartphones 600px and down. 
-@media only screen and (max-width: 600px) {
+
+// tablets and down.
+@media only screen and (max-width: 1200px) {
     //nav burger
+
+    .mobileNavButton{
+        display: inline-block;
+        position: fixed;
+        background: rgba(0, 0, 0, 0);
+        border: none;
+        width: 3rem;
+        aspect-ratio: 1;
+        right: .25rem;
+        top: .5rem;
+        background-image: url('/Assets/menu-alt-01-svgrepo-com.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border-radius: 2px;
+        cursor: pointer;
+        z-index: 99;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity .2s ease-in, transform .25s linear;
+        filter: drop-shadow(0px 3px 0px #000);
+
+    }
+    .mobileNavActive{
+        transform: translateX(100%);
+    }
+    .active{
+        opacity: 1; 
+    }
+    
     nav{
-        //position: fixed;
-        padding: 1rem 0 0 0;
-        display: flex;
+        padding: 10rem 0 0 0;
         flex-direction: column;
         align-items: center;
-        width: 50%;
-        position: absolute;
+        justify-content: flex-start;
+        position: fixed;
         transform: translateX(200%);
+        transition: transform .5s linear;
+        width: 50%;
+        min-height: 100vh;
+        background-color: rgba(255, 255, 255, 0.117);
     
         &  .menuUl{
                 
@@ -30,15 +60,15 @@
                 color: antiquewhite;
                 font-size: 1.25rem;
                 padding: 0;
+                background-color:  rgba(0,0,0,0);
               
             }
             button:hover,button:focus{
                 animation:  borderBreath 2s infinite;
-                background-color: rgba(0, 100, 0, 0);
-                cursor: pointer;
+                background-color:  rgba(0,0,0,0);
             }
             button:active{
-                background-color: rgba(0, 100, 0, 0);
+                background-color:  rgba(0,0,0,0);
             } 
     }
     // hero
@@ -95,6 +125,15 @@
   // about 
   .about{
     margin-top: 2rem;
+    & .headshot{
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+        max-width: 20rem;
+        & ul{
+           align-self: center;
+        }
+    }
     h2{
         font-size: 2rem;
        
@@ -125,3 +164,4 @@
     }
     }
 }
+

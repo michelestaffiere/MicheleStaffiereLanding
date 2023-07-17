@@ -53,9 +53,25 @@ input {
   border-radius: 0;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .wrapper {
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 body {
@@ -105,6 +121,10 @@ body {
   opacity: 1;
   transition: opacity 1 linear;
   animation: fadeInFadeOut 2.5s infinite;
+}
+
+.mobileNavButton {
+  display: none;
 }
 
 nav {
@@ -451,15 +471,45 @@ nav button:active {
   margin: 0 0 1rem 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
+  .mobileNavButton {
+    display: inline-block;
+    position: fixed;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    width: 3rem;
+    aspect-ratio: 1;
+    right: 0.25rem;
+    top: 0.5rem;
+    background-image: url("/Assets/menu-alt-01-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.2s ease-in, transform 0.25s linear;
+    filter: drop-shadow(0px 3px 0px #000);
+  }
+  .mobileNavActive {
+    transform: translateX(100%);
+  }
+  .active {
+    opacity: 1;
+  }
   nav {
-    padding: 1rem 0 0 0;
-    display: flex;
+    padding: 10rem 0 0 0;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    position: absolute;
+    justify-content: flex-start;
+    position: fixed;
     transform: translateX(200%);
+    transition: transform 0.5s linear;
+    width: 50%;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.117);
   }
   nav .menuUl {
     grid-template-columns: repeat(1, 1fr);
@@ -474,14 +524,14 @@ nav button:active {
     color: antiquewhite;
     font-size: 1.25rem;
     padding: 0;
+    background-color: rgba(0, 0, 0, 0);
   }
   nav button:hover, nav button:focus {
     animation: borderBreath 2s infinite;
-    background-color: rgba(0, 100, 0, 0);
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
   }
   nav button:active {
-    background-color: rgba(0, 100, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
   }
   .fadeInArea .name {
     font-size: 2rem;
@@ -518,6 +568,15 @@ nav button:active {
   }
   .about {
     margin-top: 2rem;
+  }
+  .about .headshot {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    max-width: 20rem;
+  }
+  .about .headshot ul {
+    align-self: center;
   }
   .about h2 {
     font-size: 2rem;

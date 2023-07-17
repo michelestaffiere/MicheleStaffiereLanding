@@ -1,9 +1,13 @@
+const body = document.querySelector("body");
+
 const h1Heading = document.querySelector('.name');
 const h2SubHeading = document.querySelector('.subHeading');
 const talkButton = document.querySelector('.contactMe')
 const menuUL = document.querySelector('.menuUL')
 const nav = document.querySelector('nav');
 const chevron = document.querySelector('.chevron');
+const mobileNavButton = document.querySelector(".mobileNavButton");
+
 
 
 
@@ -56,6 +60,7 @@ const firstLoadGlitchAnimation = () =>{
                 h2HasCompleted = true;
                 if(h2HasCompleted === true){
                     nav.classList.add('active');
+                    mobileNavButton.classList.add('active');
                     chevron.classList.add('fadeInFadeOut');
                 }
             })
@@ -109,4 +114,19 @@ closeContactModalButton.addEventListener('click',() =>{
     modal.classList.add('above');
     modal.close();
 })
+
+
+//burger menu func
+
+
+mobileNavButton.addEventListener('click', ()=>{
+    nav.classList.toggle('mobileNavActive');
+});
+
+nav.addEventListener('click', (e)=>{
+    if(e.target.tagName === "A" || e.target.tagName === "BUTTON"){
+        nav.classList.toggle('mobileNavActive');
+    }
+});
+
 

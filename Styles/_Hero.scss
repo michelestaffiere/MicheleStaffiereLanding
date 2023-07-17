@@ -44,7 +44,9 @@
 }
 
 // Navigation STARTS
-
+.mobileNavButton{
+    display: none;
+}
 nav{
     //position: fixed;
     padding: 1rem;
