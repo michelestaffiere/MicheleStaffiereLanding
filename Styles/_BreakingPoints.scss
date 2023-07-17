@@ -1,0 +1,127 @@
+// 1920px laptops @ 125% scaling / older molder HD displays
+@media only screen and (max-width: 1600px) {
+
+}
+// Smartphones 600px and down. 
+@media only screen and (max-width: 600px) {
+    //nav burger
+    nav{
+        //position: fixed;
+        padding: 1rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        position: absolute;
+        transform: translateX(200%);
+    
+        &  .menuUl{
+                
+                grid-template-columns:  repeat(1,1fr);
+                
+                hr{
+                   display: none;
+                }
+            }
+            .contactMe{
+                border:none;
+                border-bottom: green 2px solid;
+                margin-bottom: 1rem;
+                color: antiquewhite;
+                font-size: 1.25rem;
+                padding: 0;
+              
+            }
+            button:hover,button:focus{
+                animation:  borderBreath 2s infinite;
+                background-color: rgba(0, 100, 0, 0);
+                cursor: pointer;
+            }
+            button:active{
+                background-color: rgba(0, 100, 0, 0);
+            } 
+    }
+    // hero
+.fadeInArea{
+    & {
+        .name{
+            font-size: 2rem;
+        }
+        .subHeading{
+            font-size: 1.5rem;
+             margin-bottom: 2.5rem;
+        }
+    }     
+}
+
+//projects
+.showCase {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    & .showCaseContainer {
+      & .project1, .project2, .project3 {
+        width: 85%;
+        flex-direction: column;
+        justify-content: center;
+        
+        .previewImg1, .previewImg2, .previewImg3  {
+        justify-content: center;
+          flex-direction: column;
+        }
+        .previewImg1 img, .previewImg2 img, .previewImg3 img{
+          width: 100%;
+        }
+        
+        .projectInfo {
+          & 
+          .stackUsed {
+            gap: .75rem;
+          }
+          p {
+            line-height: 1.25;
+            font-size: 1rem;
+          }
+          
+          h3 {
+            font-size: 1.15rem;
+          }
+        }
+      }
+    }
+  }
+  // about 
+  .about{
+    margin-top: 2rem;
+    h2{
+        font-size: 2rem;
+       
+    }
+
+    & .aboutContainer{
+      flex-direction: column;
+        & 
+        .myStoryText{
+            width: 100%;
+        }
+    }
+    & .techStack{
+        & ul{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            & li{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                & img{
+                    width: 40px;
+                }
+            }
+        }
+    }
+    }
+}

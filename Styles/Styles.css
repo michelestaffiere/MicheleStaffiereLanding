@@ -70,7 +70,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
 }
 .fadeInArea .name {
   opacity: 0%;
@@ -209,46 +210,43 @@ nav button:active {
     opacity: 0%;
   }
 }
-.modal[open] {
+.modal {
   background-color: blue;
   border: 2px white outset;
   color: white;
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
   width: 20rem;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
+  transition: transform 0.5s ease-in-out;
 }
-.modal[open] div {
+.modal div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.modal[open] form {
+.modal form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.modal[open] form fieldset {
+.modal form fieldset {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.modal[open] form fieldset input[type=text], .modal[open] form fieldset input[type=email] {
+.modal form fieldset input[type=text], .modal form fieldset input[type=email] {
   font-family: "Space Mono", monospace;
 }
-.modal[open] form fieldset input[type=text]::placeholder, .modal[open] form fieldset input[type=email]::placeholder {
+.modal form fieldset input[type=text]::placeholder, .modal form fieldset input[type=email]::placeholder {
   font-family: "Space Mono", monospace;
 }
-.modal[open] form fieldset textarea {
+.modal form fieldset textarea {
   resize: none;
   border: 2px outset gray;
 }
-.modal[open] form input[type=submit] {
+.modal form input[type=submit] {
   border: 2px outset gray;
 }
-.modal[open] .closeModal {
+.modal .closeModal {
   border: 2px outset gray;
 }
 
@@ -256,16 +254,16 @@ nav button:active {
   background-color: rgba(0, 0, 255, 0.246);
 }
 
-.modal {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+.above {
+  transform: translateY(-225%);
 }
 
 .showCase {
   margin: 2rem 0 0 0;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   flex-direction: column;
   align-items: center;
 }
@@ -317,10 +315,6 @@ nav button:active {
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
-}
-.showCase .showCaseContainer .project1 .projectInfo .stackUsed img, .showCase .showCaseContainer .project2 .projectInfo .stackUsed img, .showCase .showCaseContainer .project3 .projectInfo .stackUsed img {
-  max-height: 3.5rem;
-  filter: drop-shadow(0 0 10px black);
 }
 .showCase .showCaseContainer .project1 .projectInfo .stackUsed li, .showCase .showCaseContainer .project2 .projectInfo .stackUsed li, .showCase .showCaseContainer .project3 .projectInfo .stackUsed li {
   border-radius: 5px;
@@ -376,7 +370,8 @@ nav button:active {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   gap: 3rem;
 }
 .about h2 {
@@ -454,4 +449,97 @@ nav button:active {
   height: auto;
   width: 50px;
   margin: 0 0 1rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    padding: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    position: absolute;
+    transform: translateX(200%);
+  }
+  nav .menuUl {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  nav .menuUl hr {
+    display: none;
+  }
+  nav .contactMe {
+    border: none;
+    border-bottom: green 2px solid;
+    margin-bottom: 1rem;
+    color: antiquewhite;
+    font-size: 1.25rem;
+    padding: 0;
+  }
+  nav button:hover, nav button:focus {
+    animation: borderBreath 2s infinite;
+    background-color: rgba(0, 100, 0, 0);
+    cursor: pointer;
+  }
+  nav button:active {
+    background-color: rgba(0, 100, 0, 0);
+  }
+  .fadeInArea .name {
+    font-size: 2rem;
+  }
+  .fadeInArea .subHeading {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .showCase h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .showCase .showCaseContainer .project1, .showCase .showCaseContainer .project2, .showCase .showCaseContainer .project3 {
+    width: 85%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .showCase .showCaseContainer .project1 .previewImg1, .showCase .showCaseContainer .project1 .previewImg2, .showCase .showCaseContainer .project1 .previewImg3, .showCase .showCaseContainer .project2 .previewImg1, .showCase .showCaseContainer .project2 .previewImg2, .showCase .showCaseContainer .project2 .previewImg3, .showCase .showCaseContainer .project3 .previewImg1, .showCase .showCaseContainer .project3 .previewImg2, .showCase .showCaseContainer .project3 .previewImg3 {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .showCase .showCaseContainer .project1 .previewImg1 img, .showCase .showCaseContainer .project1 .previewImg2 img, .showCase .showCaseContainer .project1 .previewImg3 img, .showCase .showCaseContainer .project2 .previewImg1 img, .showCase .showCaseContainer .project2 .previewImg2 img, .showCase .showCaseContainer .project2 .previewImg3 img, .showCase .showCaseContainer .project3 .previewImg1 img, .showCase .showCaseContainer .project3 .previewImg2 img, .showCase .showCaseContainer .project3 .previewImg3 img {
+    width: 100%;
+  }
+  .showCase .showCaseContainer .project1 .projectInfo .stackUsed, .showCase .showCaseContainer .project2 .projectInfo .stackUsed, .showCase .showCaseContainer .project3 .projectInfo .stackUsed {
+    gap: 0.75rem;
+  }
+  .showCase .showCaseContainer .project1 .projectInfo p, .showCase .showCaseContainer .project2 .projectInfo p, .showCase .showCaseContainer .project3 .projectInfo p {
+    line-height: 1.25;
+    font-size: 1rem;
+  }
+  .showCase .showCaseContainer .project1 .projectInfo h3, .showCase .showCaseContainer .project2 .projectInfo h3, .showCase .showCaseContainer .project3 .projectInfo h3 {
+    font-size: 1.15rem;
+  }
+  .about {
+    margin-top: 2rem;
+  }
+  .about h2 {
+    font-size: 2rem;
+  }
+  .about .aboutContainer {
+    flex-direction: column;
+  }
+  .about .aboutContainer .myStoryText {
+    width: 100%;
+  }
+  .about .techStack ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .about .techStack ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about .techStack ul li img {
+    width: 40px;
+  }
 }/*# sourceMappingURL=Styles.css.map */
