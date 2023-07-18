@@ -130,3 +130,35 @@ nav.addEventListener('click', (e)=>{
 });
 
 
+// form handling
+
+const form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const status = document.getElementById("formStatus");
+      const data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "//Thank you for reaching out!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "//Oops! please try again later."
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "//Oops! please try again later."
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
