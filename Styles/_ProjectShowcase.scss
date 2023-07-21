@@ -1,3 +1,5 @@
+@use './vars' as *;
+
 .showCase {
     margin: 2rem 0 0 0;
     display: flex;
@@ -29,7 +31,7 @@
         align-items: center;
         width: 75%;
         padding: 0;
-        border: 2px dotted green;
+        border: 2px dotted $darkAltText;
         transition: 1s ease;
         // gap: 1rem;
         
@@ -71,10 +73,6 @@
             gap: 1rem;
             justify-content: flex-start;
             & li{
-              border-radius: 5px;
-              background-color: black;
-              color: green;
-              font-style: italic;
               & img{
                 width: 50px;
               }
@@ -83,29 +81,27 @@
           
           li {
             margin-top: 1rem;
+          
           }
           
-          a {
-            color:black;
+          .projectLinks {
+            color:$darkFill;
             text-decoration: none;
-            background-color: red;
-            border-radius: 10px;
+            background-color: $darkLinks;
+            border-radius: 5px;
             margin-top: 3rem;
-            padding: 1px 2px;
+            padding: 5px 5px;
+            font-weight: bold;
            
           }
           
           p {
-            color: green;
-            background-color: black;
-            border-radius: 8px;
+            color: inherit;
             line-height: 1.5;
           }
           
           h3 {
-            font-size: 1.25rem;
-            color: green;
-            background-color: black;
+            font-size: 1.75rem;
             display: inline-block;
           }
         }
@@ -114,6 +110,9 @@
           //border-left: 5px dashed rgba(0, 128, 0, 0.451);
           text-align: right;
         }
+      }
+      .project2 ul{
+        align-self: flex-end;
       }
     }
   }

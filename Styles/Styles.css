@@ -82,6 +82,20 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  position: relative;
+}
+
+.top {
+  position: fixed;
+  height: 3.5rem;
+  width: 3.5rem;
+  opacity: 0;
+  bottom: 2rem;
+  right: 1rem;
+  transition: opacity 0.5s linear;
+}
+
 .fadeInArea {
   display: flex;
   flex-direction: column;
@@ -89,6 +103,7 @@ body {
   align-items: center;
   min-height: 100vh;
   min-height: 100svh;
+  transition: 1s linear;
 }
 .fadeInArea .name {
   opacity: 0%;
@@ -107,8 +122,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 10%;
   opacity: 0%;
 }
 .fadeInArea .chevron img {
@@ -133,7 +146,6 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  transition: 1s linear;
   align-items: end;
   opacity: 0;
   background-color: black;
@@ -148,26 +160,20 @@ nav .menuUl li {
   list-style: none;
   text-align: center;
 }
-nav .menuUl li a {
-  color: antiquewhite;
-  text-decoration: none;
-  font-size: 1.25rem;
-}
 nav .menuUl li:hover ~ hr {
-  animation: borderBreath 2s infinite;
   transition: all 0.25s linear;
 }
 nav .menuUl hr {
   width: 100%;
-  color: green;
-  border-color: green;
+  color: Green;
+  border-color: Green;
   height: 1px;
   transition: all 0.25s linear;
   margin: 0;
 }
 nav .contactMe {
   background-color: black;
-  border: 2px solid green;
+  border: 2px solid Green;
   color: antiquewhite;
   font-family: "Space Mono", monospace;
   font-size: 1.5rem;
@@ -175,11 +181,22 @@ nav .contactMe {
 }
 nav button:hover, nav button:focus {
   animation: borderBreath 2s infinite;
-  background-color: darkgreen;
+  background-color: Green;
   cursor: pointer;
 }
 nav button:active {
-  background-color: darkgreen;
+  background-color: Green;
+}
+
+.menuLinks {
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.lightMode {
+  color: green;
+  background-color: antiquewhite;
 }
 
 .menu2:hover ~ hr {
@@ -188,7 +205,7 @@ nav button:active {
 
 .active {
   opacity: 1;
-  transition: opacity 1 linear;
+  transition: opacity 0.25s linear;
 }
 
 @keyframes borderBreath {
@@ -306,7 +323,7 @@ nav button:active {
   align-items: center;
   width: 75%;
   padding: 0;
-  border: 2px dotted green;
+  border: 2px dotted Green;
   transition: 1s ease;
 }
 .showCase .showCaseContainer .project1 .previewImg1, .showCase .showCaseContainer .project1 .previewImg2, .showCase .showCaseContainer .project1 .previewImg3, .showCase .showCaseContainer .project2 .previewImg1, .showCase .showCaseContainer .project2 .previewImg2, .showCase .showCaseContainer .project2 .previewImg3, .showCase .showCaseContainer .project3 .previewImg1, .showCase .showCaseContainer .project3 .previewImg2, .showCase .showCaseContainer .project3 .previewImg3 {
@@ -341,41 +358,35 @@ nav button:active {
   gap: 1rem;
   justify-content: flex-start;
 }
-.showCase .showCaseContainer .project1 .projectInfo .stackUsed li, .showCase .showCaseContainer .project2 .projectInfo .stackUsed li, .showCase .showCaseContainer .project3 .projectInfo .stackUsed li {
-  border-radius: 5px;
-  background-color: black;
-  color: green;
-  font-style: italic;
-}
 .showCase .showCaseContainer .project1 .projectInfo .stackUsed li img, .showCase .showCaseContainer .project2 .projectInfo .stackUsed li img, .showCase .showCaseContainer .project3 .projectInfo .stackUsed li img {
   width: 50px;
 }
 .showCase .showCaseContainer .project1 .projectInfo li, .showCase .showCaseContainer .project2 .projectInfo li, .showCase .showCaseContainer .project3 .projectInfo li {
   margin-top: 1rem;
 }
-.showCase .showCaseContainer .project1 .projectInfo a, .showCase .showCaseContainer .project2 .projectInfo a, .showCase .showCaseContainer .project3 .projectInfo a {
+.showCase .showCaseContainer .project1 .projectInfo .projectLinks, .showCase .showCaseContainer .project2 .projectInfo .projectLinks, .showCase .showCaseContainer .project3 .projectInfo .projectLinks {
   color: black;
   text-decoration: none;
   background-color: red;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-top: 3rem;
-  padding: 1px 2px;
+  padding: 5px 5px;
+  font-weight: bold;
 }
 .showCase .showCaseContainer .project1 .projectInfo p, .showCase .showCaseContainer .project2 .projectInfo p, .showCase .showCaseContainer .project3 .projectInfo p {
-  color: green;
-  background-color: black;
-  border-radius: 8px;
+  color: inherit;
   line-height: 1.5;
 }
 .showCase .showCaseContainer .project1 .projectInfo h3, .showCase .showCaseContainer .project2 .projectInfo h3, .showCase .showCaseContainer .project3 .projectInfo h3 {
-  font-size: 1.25rem;
-  color: green;
-  background-color: black;
+  font-size: 1.75rem;
   display: inline-block;
 }
 .showCase .showCaseContainer .project1 .second, .showCase .showCaseContainer .project2 .second, .showCase .showCaseContainer .project3 .second {
   border-right: none;
   text-align: right;
+}
+.showCase .showCaseContainer .project2 ul {
+  align-self: flex-end;
 }
 
 .about {
@@ -414,10 +425,10 @@ nav button:active {
   gap: 1.15rem;
   max-width: 20rem;
 }
-.about .aboutContainer .headshot img {
+.about .aboutContainer .headshot .headshotImg {
   max-width: inherit;
   border-radius: 10px;
-  filter: grayscale(20%) drop-shadow(0px 0px 10px green);
+  border: 3px solid antiquewhite;
 }
 .about .aboutContainer .myStoryText {
   display: flex;
@@ -433,7 +444,7 @@ nav button:active {
   font-weight: 800;
 }
 .about .aboutContainer .myStoryText a {
-  color: green;
+  color: Green;
   padding: 0px 2px;
   border-radius: 10px;
   font-weight: 800;
@@ -471,7 +482,7 @@ footer {
   align-items: center;
 }
 footer .glitch {
-  color: white;
+  color: darkText;
   font-size: 2rem;
   text-transform: uppercase;
   position: relative;
@@ -488,7 +499,7 @@ footer ul {
   display: flex;
   gap: 2rem;
 }
-footer ul li a {
+footer ul li .footerSocial {
   font-size: 1.15rem;
   text-decoration: none;
   color: antiquewhite;

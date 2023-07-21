@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/Styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body >
     <dialog class="modal above" id="modal">
@@ -37,12 +36,15 @@
     <nav>
         <button class="contactMe" id="contactMeBtn">Let's Talk</button>
         <ul class="menuUl">
-            <li ><a href="#showCase">Projects</a></li>
-            <li class="menu2"><a href="#about">About Me</a></li>
+            <li ><a class="menuLinks" href="#showCase">Projects</a></li>
+            <li class="menu2"><a class="menuLinks" href="#about">About Me</a></li>
             <hr>
         </ul>
     </nav>    
     <main class="wrapper">
+        <button id="top" class="top">
+            back to top
+        </button>
         <section class="hero">
             <div class="fadeInArea">
             <!--using data-value to save the content of the H1 and P so they can return their original state after runnig glitch Animation -->
@@ -68,8 +70,8 @@
                         <h3>// Mock Up Job Board</h3>
                         <p>Converted from PSD. A mock up job board site with functional filtering for job posts based on tags selected. Site is built and rendered using only JS with minimal HTML in the intial project file. Built to be fully accesible and viewables on all screen sizes. </p>
                         <ul>
-                            <li><a href="">Live Site</a></li>
-                            <li><a href="">Github</a></li>
+                            <li><a class="projectLinks" href="">Live Site</a></li>
+                            <li><a  class="projectLinks"href="">Github</a></li>
                         </ul>
                         <ul class="stackUsed">
                             <li><img src="./Assets/stack_Html.svg" alt=""></li>
@@ -86,8 +88,8 @@
                          <h3>// Clipboard</h3>
                         <p>Converted from PSD. A mock up landing page for a company and it's product.Built to be fully accesible and viewables on all screen sizes. </p>
                         <ul>
-                            <li><a href="">Live Site</a></li>
-                            <li><a href="">Github</a></li>
+                            <li><a class="projectLinks" href="">Live Site</a></li>
+                            <li><a class="projectLinks" href="">Github</a></li>
                         </ul>
                         <ul class="stackUsed">
                             <li><img src="./Assets/stack_Html.svg" alt=""></li>
@@ -106,8 +108,8 @@
                     <!-- FIX FIRE BASE SO EVERYTHING LOADS, MAY NEED TO CONNECT TO A NEW FIREBASE DATABASE. -->
                         <p>Converted from PSD.  A mock up store front front with a functional filtering system for its products, fully interfaced with Google Firebase realtime database system. Built to be fully accesible and viewables on all screen sizes </p>
                         <ul>
-                            <li><a href="">Live Site</a></li>
-                            <li><a href="">Github</a></li>
+                            <li><a class="projectLinks" href="">Live Site</a></li>
+                            <li><a class="projectLinks" href="">Github</a></li>
                         </ul>
                         <ul class="stackUsed">
                             <li><img src="./Assets/stack_Html.svg" alt=""></li>
@@ -123,7 +125,7 @@
             <h2>//My Story</h2>
             <div class="aboutContainer">
                 <div class="headshot">
-                    <img src="./Assets/myFace.PNG" alt="a picture of me just for you!">
+                    <img class="headshotImg"   src="./Assets/myFace.PNG" alt="a picture of me just for you!">
                     <p>//Me-Kayle-Lay</p>
                     <ul class="socials">
                         <li>
@@ -146,15 +148,15 @@
                 <div class="myStoryText">
                     <div>
                         <p>
-                            Hi There! Thank you for visiting my page and for scrolling down this far! I started my coding journey in 2022  after  deciding that my previous field <span>[Human Resources]</span> just wasnt for me, instead Front-End Development is more my style. 
+                            Hi There! Thank you for visiting my page and for scrolling down this far! I started my coding journey in 2022  after  deciding that my previous field <span class="storySpan">[Human Resources]</span> just wasnt for me, instead Front-End Development is more my style. 
                         </p>
                         <br>
                         <p>
-                            I love creating clean and simplistic sites that pop. I decided to theme my site after our good friend the <span>[terminal]</span> - The idea came to me when i was getting DOSbox ready and playing around in the terminal. Of course so I could play some old school point and click adventure games <span>[Maniac Mansion]</span> to be exact.
+                            I love creating clean and simplistic sites that pop. I decided to theme my site after our good friend the <span class="storySpan">[terminal]</span> - The idea came to me when i was getting DOSbox ready and playing around in the terminal. Of course so I could play some old school point and click adventure games <span>[Maniac Mansion]</span> to be exact.
                         </p>
                         <br>
                         <p>
-                            If my page resonates with you and you want to work together or just want to talk, feel free to reach out to me on LinkedIn or shoot me and email using the <span><a href="#contactMeBtn">[Let's Talk]</a></span> button!
+                            If my page resonates with you and you want to work together or just want to talk, feel free to reach out to me on LinkedIn or shoot me and email using the <span><a class="storyLinks" href="#contactMeBtn">[Let's Talk]</a></span> button!
                         </p>
                         <br>
                         <p>Cheers!</p>
@@ -208,14 +210,14 @@
         </p>
         <ul>
             <li>
-                <a  href="https://github.com/michelestaffiere" target="_blank">GitHub</a>
+                <a class="footerSocial" href="https://github.com/michelestaffiere" target="_blank">GitHub</a>
             </li>
             <li>
-                <a  href="https://ca.linkedin.com/in/michelestaffiere" target="_blank">LinkedIn</a>
+                <a  class="footerSocial" href="https://ca.linkedin.com/in/michelestaffiere" target="_blank">LinkedIn</a>
                 
             </li>
         </ul>
     </footer>
 </body>
-<script src="./Scripts/App.js" type="module"></script>
+<script type="module" src="./Scripts/App.js"></script>
 </html>

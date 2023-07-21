@@ -1,4 +1,5 @@
 //  HackerMans H1 & H2 area
+@use './vars' as *;
 .fadeInArea{
     display: flex;
     flex-direction: column;
@@ -6,6 +7,7 @@
     align-items: center;
     min-height: 100vh;
     min-height: 100svh;
+    transition: 1s linear;
     & {
         .name{
             opacity: 0%;
@@ -24,8 +26,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            bottom: 10%;
             opacity: 0%;
             & img{
                 height: 50%;
@@ -53,10 +53,10 @@ nav{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    transition: 1s linear;
+    // transition: 1s linear;
     align-items: end;
     opacity: 0;
-    background-color: black;
+    background-color: $darkFill;
     z-index: 2;
 
     &  .menuUl{
@@ -66,30 +66,24 @@ nav{
             & li{
                 list-style: none;
                 text-align: center;
-                a{
-                color: antiquewhite;
-                text-decoration: none;
-                font-size: 1.25rem;
-                }
                 &:hover{
                     & ~ hr{
-                        animation:  borderBreath 2s infinite;
                         transition: all .25s linear;
                     }
                 }
             }
             hr{
                 width: 100%;
-                color: green;
-                border-color: green; // chrome and IE colour fix.
+                color: $darkAltText;
+                border-color: $darkAltText; // chrome and IE colour fix.
                 height: 1px;
                 transition: all .25s linear;
                 margin: 0;
             }
         }
         .contactMe{
-            background-color: black;
-            border: 2px solid green;
+            background-color: $darkFill;
+            border: 2px solid $darkAltText;
             color: antiquewhite;
             font-family: 'Space Mono', monospace;
             font-size: 1.5rem;
@@ -97,14 +91,24 @@ nav{
         }
         button:hover,button:focus{
             animation:  borderBreath 2s infinite;
-            background-color: darkgreen;
+            background-color: $darkAltText;
             cursor: pointer;
         }
         button:active{
-            background-color: darkgreen;
+            background-color: $darkAltText;
         } 
 }
 
+.menuLinks{
+    color: $darkText;
+    text-decoration: none;
+    font-size: 1.25rem;
+    }
+
+    .lightMode{
+        color: $lightText;
+        background-color: $lightFill;
+    }
 // 
 
 // Menu HR movement
@@ -114,7 +118,7 @@ nav{
 
 .active{
     opacity: 1;
-    transition: opacity 1 linear ;
+    transition: opacity 0.25s linear ;
 }
 
 
@@ -135,5 +139,4 @@ nav{
     50% {opacity: 100%};
     100% {opacity: 0%}
 }
-
  

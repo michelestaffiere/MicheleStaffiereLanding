@@ -1,3 +1,5 @@
+@use './vars' as *;
+
 footer{
     display: flex;
     justify-content: center;
@@ -6,7 +8,7 @@ footer{
     flex-direction: column;
     align-items: center;
     & .glitch{
-        color: white;
+        color: darkText;
         font-size: 2rem;
         text-transform: uppercase;
         position: relative;
@@ -29,10 +31,10 @@ footer{
         display: flex;
         gap: 2rem;
         & li{
-            & a{
+            & .footerSocial{
                 font-size: 1.15rem;
                 text-decoration: none;
-                color: antiquewhite;
+                color: $darkText;
             }
         }
     }

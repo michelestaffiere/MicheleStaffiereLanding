@@ -1,8 +1,10 @@
 //Modal Scriipts
 const ModalHandling = () => {
     const contactButton = document.getElementById("contactMeBtn");
-    const closeContactModalButton = document.getElementById("closeModal")
+    const closeContactModalButton = document.getElementById("closeModal");
     const modal = document.getElementById("modal");
+    const mobileNavButton = document.querySelector('.mobileNavButton');
+    const nav = document.querySelector('nav');
     
     contactButton.addEventListener('click',()=>{
         modal.showModal();

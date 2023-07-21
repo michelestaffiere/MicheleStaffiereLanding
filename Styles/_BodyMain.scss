@@ -1,3 +1,4 @@
+@use './vars' as *;
 .wrapper{ 
     width:80%; 
     margin:0 auto;
@@ -6,9 +7,22 @@
     gap: 2.5rem;
 }
 body{
-    background-color: black;
+    background-color: $darkFill;
     height: 100%;
-    color: antiquewhite;
+    color: $darkText;
     font-family: 'Space Mono', monospace;
     overflow-x:hidden;
+}
+main{
+    position: relative;
+}
+
+.top{
+    position: fixed;
+    height: 3.5rem;
+    width: 3.5rem;
+    opacity: 0;
+    bottom: 2rem;
+    right: 1rem;
+    transition: opacity .5s linear;
 }
