@@ -22,7 +22,14 @@ main{
     height: 3.5rem;
     width: 3.5rem;
     opacity: 0;
-    bottom: 2rem;
-    right: 1rem;
-    transition: opacity .5s linear;
-}
+    bottom: 10px;
+    right: 0px;
+    transition: opacity 0.5s linear;
+    background: rgba(0, 0, 0, 0.342);
+    padding: 1%;
+    border: none;
+    font-size: 3rem;
+    color: green;
+    cursor: pointer;
+  }
+

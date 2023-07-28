@@ -50,15 +50,18 @@
             & p{
                 line-height: 1.45;
             }
-            span{
-                color:$darkLinks;
-                font-weight: 800;
-            }
-            a{
+            .letsTalkStory{
+                font-size: 1.25rem;
                 color: $darkAltText;
-                padding: 0px 2px;
-                border-radius: 10px;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: .5s ease-in;
+            }
+            .letsTalkStory:hover{
                 font-weight: 800;
+                background-color: $darkText;
+                padding: 1%;
+                transition: .5s ease-in;
             }
         }
     }

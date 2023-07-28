@@ -91,9 +91,15 @@ main {
   height: 3.5rem;
   width: 3.5rem;
   opacity: 0;
-  bottom: 2rem;
-  right: 1rem;
+  bottom: 10px;
+  right: 0px;
   transition: opacity 0.5s linear;
+  background: rgba(0, 0, 0, 0.342);
+  padding: 1%;
+  border: none;
+  font-size: 3rem;
+  color: green;
+  cursor: pointer;
 }
 
 .fadeInArea {
@@ -439,15 +445,18 @@ nav button:active {
 .about .aboutContainer .myStoryText p {
   line-height: 1.45;
 }
-.about .aboutContainer .myStoryText span {
-  color: red;
-  font-weight: 800;
-}
-.about .aboutContainer .myStoryText a {
+.about .aboutContainer .myStoryText .letsTalkStory {
+  font-size: 1.25rem;
   color: Green;
-  padding: 0px 2px;
-  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s ease-in;
+}
+.about .aboutContainer .myStoryText .letsTalkStory:hover {
   font-weight: 800;
+  background-color: antiquewhite;
+  padding: 1%;
+  transition: 0.5s ease-in;
 }
 .about .techStack {
   display: flex;
@@ -485,6 +494,7 @@ footer .glitch {
   color: darkText;
   font-size: 2rem;
   text-transform: uppercase;
+  text-align: center;
   position: relative;
   text-shadow: 0.05em 0 0 red, -0.025em -0.05em 0 blue, 0.025em 0.05em 0 green;
   animation: glitchVHS 700ms infinite;
@@ -548,9 +558,9 @@ footer ul li .footerSocial {
     border: none;
     width: 3rem;
     aspect-ratio: 1;
-    right: 0.25rem;
-    top: 0.5rem;
-    background-image: url("/Assets/menu-alt-01-svgrepo-com.svg");
+    right: -40px;
+    top: 0px;
+    background-image: url("/MicheleStaffiereLanding/Assets/menu-alt-01-svgrepo-com.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -560,13 +570,16 @@ footer ul li .footerSocial {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 0.2s ease-in, transform 0.25s linear;
-    filter: drop-shadow(0px 3px 0px #000);
+    filter: drop-shadow(0px 3px 0px rgba(0, 0, 0, 0));
   }
   .mobileNavActive {
     transform: translateX(100%);
+    border-left: 1px solid green;
   }
   .active {
     opacity: 1;
+    transition: 0.5s ease-in-out;
+    background-color: black;
   }
   nav {
     padding: 10rem 0 0 0;
@@ -604,10 +617,14 @@ footer ul li .footerSocial {
   }
   .fadeInArea .name {
     font-size: 2rem;
+    text-align: center;
+    max-width: 90%;
   }
   .fadeInArea .subHeading {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
+    text-align: center;
+    max-width: 90%;
   }
   .showCase h2 {
     font-size: 1.5rem;
@@ -670,4 +687,7 @@ footer ul li .footerSocial {
   .about .techStack ul li img {
     width: 40px;
   }
+}
+footer .glitch {
+  font-size: 1.25rem;
 }/*# sourceMappingURL=Styles.css.map */

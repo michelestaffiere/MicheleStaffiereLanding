@@ -8,7 +8,6 @@ const backToTopHandling = () =>{
     const button = document.getElementById('top');
 
     window.addEventListener('scroll',()=>{
-        console.log(window.scrollY);
         if(window.scrollY > 500){
             button.style.opacity = 1;
         } else{
@@ -18,7 +17,6 @@ const backToTopHandling = () =>{
 
     button.addEventListener('click',(e)=>{
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        console.log(window.scrollY)
     });
 };
 

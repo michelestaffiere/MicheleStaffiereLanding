@@ -1,10 +1,11 @@
 //Modal Scriipts
-const ModalHandling = () => {
+const modalHandling = (node) => {
     const contactButton = document.getElementById("contactMeBtn");
     const closeContactModalButton = document.getElementById("closeModal");
     const modal = document.getElementById("modal");
     const mobileNavButton = document.querySelector('.mobileNavButton');
     const nav = document.querySelector('nav');
+    const letsTalkStory = document.querySelector('.letsTalkStory');
     
     contactButton.addEventListener('click',()=>{
         modal.showModal();
@@ -15,9 +16,7 @@ const ModalHandling = () => {
         modal.classList.add('above');
         modal.close();
     })
-    //burger menu func
-    
-    
+    //burger menu modal
     mobileNavButton.addEventListener('click', ()=>{
         nav.classList.toggle('mobileNavActive');
     });
@@ -27,6 +26,11 @@ const ModalHandling = () => {
             nav.classList.toggle('mobileNavActive');
         }
     });
+    // My Story Button
+    letsTalkStory.addEventListener('click',() =>{
+      modal.showModal();
+      modal.classList.remove('above');
+  })
 }
 
 
@@ -66,4 +70,4 @@ const form = document.getElementById("my-form");
     form.addEventListener("submit", handleSubmit)
 }
 
-export { formspreeHandling, ModalHandling};
+export { formspreeHandling, modalHandling};
