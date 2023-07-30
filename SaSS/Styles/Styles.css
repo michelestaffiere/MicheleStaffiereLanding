@@ -80,6 +80,7 @@ body {
   color: antiquewhite;
   font-family: "Space Mono", monospace;
   overflow-x: hidden;
+  position: relative;
 }
 
 main {
@@ -261,6 +262,7 @@ nav button:active {
   gap: 1rem;
   width: 20rem;
   transition: transform 0.5s ease-in-out;
+  margin: 0 auto;
 }
 .modal div {
   display: flex;
@@ -551,19 +553,21 @@ footer ul li .footerSocial {
   }
 }
 @media only screen and (max-width: 1200px) {
+  .wrapper {
+    width: 90%;
+    overflow-x: hidden;
+  }
+  .modal {
+    width: 70%;
+  }
   .mobileNavButton {
     display: inline-block;
     position: fixed;
-    background: rgba(0, 0, 0, 0);
     border: none;
     width: 3rem;
     aspect-ratio: 1;
     right: -40px;
     top: 0px;
-    background-image: url("/MicheleStaffiereLanding/Assets/menu-alt-01-svgrepo-com.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     border-radius: 2px;
     cursor: pointer;
     z-index: 99;
@@ -571,15 +575,24 @@ footer ul li .footerSocial {
     transform: translateX(-100%);
     transition: opacity 0.2s ease-in, transform 0.25s linear;
     filter: drop-shadow(0px 3px 0px rgba(0, 0, 0, 0));
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .mobileNavButton img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0);
   }
   .mobileNavActive {
     transform: translateX(100%);
     border-left: 1px solid green;
+    background-color: black;
   }
-  .active {
+  .menuActive {
     opacity: 1;
     transition: 0.5s ease-in-out;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
   }
   nav {
     padding: 10rem 0 0 0;

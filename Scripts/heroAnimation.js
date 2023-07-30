@@ -56,7 +56,7 @@ const firstLoadGlitchAnimation = () =>{
                 h2HasCompleted = true;
                 if(h2HasCompleted === true){
                     nav.classList.add('active');
-                    mobileNavButton.classList.add('active');
+                    mobileNavButton.classList.add('menuActive');
                     chevron.classList.add('fadeInFadeOut');
                 }
             })

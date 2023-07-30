@@ -2,21 +2,26 @@
 
 // tablets and down.
 @media only screen and (max-width: 1200px) {
-    //nav burger
+ // wrapper changes for mobile (more screen realEstate)
+ .wrapper{
+  width: 90%;
+  overflow-x: hidden; // prevents modal from appearing off screen when opening it via the lets talk span in story.
+ } 
 
+
+//modal
+  .modal{
+    width:70%;
+  }
+    //nav burger
     .mobileNavButton{
         display: inline-block;
         position: fixed;
-        background: rgba(0, 0, 0, 0);
         border: none;
         width: 3rem;
         aspect-ratio: 1;
         right: -40px;
         top: 0px;
-        background-image: url("/MicheleStaffiereLanding/Assets/menu-alt-01-svgrepo-com.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
         border-radius: 2px;
         cursor: pointer;
         z-index: 99;
@@ -24,16 +29,25 @@
         transform: translateX(-100%);
         transition: opacity .2s ease-in, transform .25s linear;
         filter: drop-shadow(0px 3px 0px #00000000);
+        background-color: rgba(0, 0, 0, 0);
+        & img{
+          position: absolute;
+          left: 0;
+          width: 100%;
+          top: 0;
+          background-color: rgba(0, 0, 0, 0);
+        }
 
     }
     .mobileNavActive{
         transform: translateX(100%);
         border-left: 1px solid green;
-    }
-    .active{
-        opacity: 1; 
-        transition: 0.5s ease-in-out;
         background-color: black;
+    }
+    .menuActive{
+        opacity: 1; 
+        transition:  0.5s ease-in-out;
+        background-color: rgba(0, 0, 0, 0);
     }
     
     nav{
